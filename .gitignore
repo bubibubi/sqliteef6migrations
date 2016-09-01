@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.nuget
+/NuGet.Packager
+/packages
+/System.Data.SQLite.EF6.Migrations/bin
+/System.Data.SQLite.EF6.Migrations/obj
+/System.Data.SQLite.EF6.Migrations.Test/bin
+/System.Data.SQLite.EF6.Migrations.Test/obj
+*.user
+*.suo
