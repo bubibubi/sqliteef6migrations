@@ -74,7 +74,9 @@ namespace System.Data.SQLite.EF6.Migrations
                 case "binary":
                 case "varbinary":
                 case "varchar":
+                case "nvarchar":
                 case "char":
+                case "nchar":
                     sqliteLength = string.Format("({0})", typeUsage.GetMaxLength());
                     break;
                 default:
