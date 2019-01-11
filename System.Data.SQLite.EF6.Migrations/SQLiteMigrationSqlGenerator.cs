@@ -13,7 +13,7 @@ namespace System.Data.SQLite.EF6.Migrations
     /// <summary>
     /// Migration Ddl generator for SQLite
     /// </summary>
-    public sealed class SQLiteMigrationSqlGenerator : MigrationSqlGenerator
+    public class SQLiteMigrationSqlGenerator : MigrationSqlGenerator
     {
 
         const string BATCHTERMINATOR = ";\r\n";
