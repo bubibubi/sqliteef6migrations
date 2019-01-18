@@ -73,6 +73,26 @@ namespace System.Data.SQLite.EF6.Migrations
         }
 
 
+		/// <summary>
+		/// Return the string value in <paramref name="tableName"/> without the "dbo." starting part.
+		/// </summary>
+		/// <param name="tableName">
+		/// If the value is null or whitespace, the input value will be returned
+		/// </param>
+		/// <returns></returns>
+		public static string ReturnTableNameWithoutStartingDbo(string tableName)
+		{
+			if (string.IsNullOrWhiteSpace(tableName))
+				return tableName;
+			else
+			{
+				if (tableName.ToLower().StartsWith("dbo.") && tableName.Length > 4)
+					return tableName.Substring(4);
+				else return tableName;
+			}
+		}
+
+
 
 
     }

@@ -307,7 +307,7 @@ namespace System.Data.SQLite.EF6.Migrations
             if (migrationOperation.IsUnique)
                 ddlBuilder.AppendSql("UNIQUE ");
             ddlBuilder.AppendSql("INDEX ");
-            ddlBuilder.AppendIdentifier(migrationOperation.Name);
+			ddlBuilder.AppendIdentifier(GenerateQualifiedOperationAndTableName(migrationOperation.Name, migrationOperation.Table));
             ddlBuilder.AppendSql(" ON ");
             ddlBuilder.AppendIdentifier(migrationOperation.Table);
             ddlBuilder.AppendSql(" (");
@@ -316,6 +316,11 @@ namespace System.Data.SQLite.EF6.Migrations
 
             return ddlBuilder.GetCommandText();
         }
+
+		private static string GenerateQualifiedOperationAndTableName(string operationName, string tableName)
+		{
+			return string.Format("{0}_{1}", operationName, LiteralHelpers.ReturnTableNameWithoutStartingDbo(tableName));
+		}
 
         #endregion
 
@@ -346,7 +351,8 @@ namespace System.Data.SQLite.EF6.Migrations
         {
             SQLiteDdlBuilder ddlBuilder = new SQLiteDdlBuilder();
             ddlBuilder.AppendSql("DROP INDEX ");
-            ddlBuilder.AppendIdentifier(migrationOperation.Name);
+			//ddlBuilder.AppendIdentifier(migrationOperation.Name);
+			ddlBuilder.AppendIdentifier(GenerateQualifiedOperationAndTableName(migrationOperation.Name, migrationOperation.Table));
             ddlBuilder.AppendSql(" ON ");
             ddlBuilder.AppendIdentifier(migrationOperation.Table);
             return ddlBuilder.GetCommandText();
