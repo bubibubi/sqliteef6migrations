@@ -25,7 +25,7 @@ namespace System.Data.SQLite.EF6.Migrations
         {
             string correctIdentifier;
 
-            correctIdentifier = identifier.ToLower().StartsWith("dbo.") ? identifier.Substring(4) : identifier;
+            correctIdentifier = SQLiteProviderManifestHelper.RemoveDbo(identifier);
 
             if (correctIdentifier.Length > SQLiteProviderManifestHelper.MaxObjectNameLength)
             {
@@ -126,8 +126,7 @@ namespace System.Data.SQLite.EF6.Migrations
 
         public string CreateConstraintName(string constraint, string objectName)
         {
-            if (objectName.ToLower().StartsWith("dbo."))
-                objectName = objectName.Substring(4);
+            objectName = SQLiteProviderManifestHelper.RemoveDbo(objectName);
 
             string name = string.Format("{0}_{1}", constraint, objectName);
 

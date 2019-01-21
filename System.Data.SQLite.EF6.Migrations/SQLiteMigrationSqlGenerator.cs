@@ -307,7 +307,7 @@ namespace System.Data.SQLite.EF6.Migrations
             if (migrationOperation.IsUnique)
                 ddlBuilder.AppendSql("UNIQUE ");
             ddlBuilder.AppendSql("INDEX ");
-            ddlBuilder.AppendIdentifier(migrationOperation.Name);
+            ddlBuilder.AppendIdentifier(SQLiteProviderManifestHelper.GetFullIdentifierName(migrationOperation.Table, migrationOperation.Name));
             ddlBuilder.AppendSql(" ON ");
             ddlBuilder.AppendIdentifier(migrationOperation.Table);
             ddlBuilder.AppendSql(" (");
@@ -346,7 +346,7 @@ namespace System.Data.SQLite.EF6.Migrations
         {
             SQLiteDdlBuilder ddlBuilder = new SQLiteDdlBuilder();
             ddlBuilder.AppendSql("DROP INDEX ");
-            ddlBuilder.AppendIdentifier(migrationOperation.Name);
+            ddlBuilder.AppendIdentifier(SQLiteProviderManifestHelper.GetFullIdentifierName(migrationOperation.Table, migrationOperation.Name));
             ddlBuilder.AppendSql(" ON ");
             ddlBuilder.AppendIdentifier(migrationOperation.Table);
             return ddlBuilder.GetCommandText();
