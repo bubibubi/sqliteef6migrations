@@ -1,23 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C242E496-71CD-4AF5-B5D2-AAD23965676D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Data.SQLite.EF6.Migrations", "System.Data.SQLite.EF6.Migrations\System.Data.SQLite.EF6.Migrations.csproj", "{2511AD16-A524-42F5-A4AF-4FC6C9D2AC0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Data.SQLite.EF6.Migrations.Test", "System.Data.SQLite.EF6.Migrations.Test\System.Data.SQLite.EF6.Migrations.Test.csproj", "{24A22CF5-FDC0-45DE-AABA-FF7E274897A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E0F5CE79-C6DA-4308-809D-B30870F24EB7}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE.txt = LICENSE.txt
 	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6B057F36-7C54-47C2-B219-2A4784DC0594}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Data.SQLite.EF6.Migrations", "System.Data.SQLite.EF6.Migrations\System.Data.SQLite.EF6.Migrations.csproj", "{6B715F5A-8F7D-427C-8873-216674B4B401}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Data.SQLite.EF6.Migrations.Test", "System.Data.SQLite.EF6.Migrations.Test\System.Data.SQLite.EF6.Migrations.Test.csproj", "{B5A7CD34-89E4-48FB-9716-3F8F62F01217}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,16 +18,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6B715F5A-8F7D-427C-8873-216674B4B401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6B715F5A-8F7D-427C-8873-216674B4B401}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6B715F5A-8F7D-427C-8873-216674B4B401}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6B715F5A-8F7D-427C-8873-216674B4B401}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B5A7CD34-89E4-48FB-9716-3F8F62F01217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B5A7CD34-89E4-48FB-9716-3F8F62F01217}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B5A7CD34-89E4-48FB-9716-3F8F62F01217}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B5A7CD34-89E4-48FB-9716-3F8F62F01217}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2511AD16-A524-42F5-A4AF-4FC6C9D2AC0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2511AD16-A524-42F5-A4AF-4FC6C9D2AC0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2511AD16-A524-42F5-A4AF-4FC6C9D2AC0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2511AD16-A524-42F5-A4AF-4FC6C9D2AC0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24A22CF5-FDC0-45DE-AABA-FF7E274897A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24A22CF5-FDC0-45DE-AABA-FF7E274897A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24A22CF5-FDC0-45DE-AABA-FF7E274897A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24A22CF5-FDC0-45DE-AABA-FF7E274897A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6E73A11-7A3C-4E6A-A1C3-7DB10F38E5BB}
 	EndGlobalSection
 EndGlobal

@@ -1,8 +1,7 @@
-﻿using System;
-using System.Data.Common;
+﻿using System.Data.Common;
 using System.IO;
 
-namespace System.Data.SQLite.Migrations.Test
+namespace System.Data.SQLite.EF6.Migrations.Test
 {
     class Program
     {
