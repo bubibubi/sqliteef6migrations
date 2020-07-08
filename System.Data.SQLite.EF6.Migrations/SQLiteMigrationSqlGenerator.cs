@@ -59,8 +59,12 @@ namespace System.Data.SQLite.EF6.Migrations
 
         private string GenerateSqlStatementConcrete(MigrationOperation migrationOperation)
         {
-            Debug.Assert(false);
-            return string.Empty;
+            if (migrationOperation is SqlOperation sqlOperation)
+            {
+                return sqlOperation.Sql;
+            }
+
+            throw new Exception("Not found SqlOperation");
         }
 
 
@@ -179,14 +183,25 @@ namespace System.Data.SQLite.EF6.Migrations
             ColumnModel column = migrationOperation.Column;
 
             ddlBuilder.AppendIdentifier(column.Name);
-            ddlBuilder.AppendSql(" ");
+
             TypeUsage storeType = ProviderManifest.GetStoreType(column.TypeUsage);
             ddlBuilder.AppendType(storeType, column.IsNullable ?? true, column.IsIdentity);
-            ddlBuilder.AppendNewLine();
 
+            //DEFAULT VALUE
+            if (column.DefaultValue != null)
+            {
+                if (column.DefaultValue is DateTime defaultValue)
+                {
+                    var format = "yyyy-MM-dd HH:mm:ss.ffffff";
+                    if (defaultValue.Kind == DateTimeKind.Utc) format += 'Z';
+                    ddlBuilder.AppendSql($" DEFAULT '{defaultValue.ToString(format)}'");
+                }
+            }
+            ddlBuilder.AppendNewLine();
 
             return ddlBuilder.GetCommandText();
         }
+
 
         private string GenerateSqlStatementConcrete(DropColumnOperation migrationOperation)
         {
