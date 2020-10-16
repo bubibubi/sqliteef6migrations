@@ -1,7 +1,6 @@
-﻿using System;
-using System.Data.Entity.Migrations;
+﻿using System.Data.Entity.Migrations;
 
-namespace System.Data.SQLite.EF6.Migrations.Test.Model01
+namespace System.Data.SQLite.EF6.Migrations.Test.Models
 {
     internal sealed class ContextMigrationConfiguration : DbMigrationsConfiguration<Context>
     {
@@ -13,3 +12,4 @@ namespace System.Data.SQLite.EF6.Migrations.Test.Model01
         }
     }
 }
+
