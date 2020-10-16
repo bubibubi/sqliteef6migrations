@@ -1,9 +1,8 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace System.Data.SQLite.EF6.Migrations.Test.Model01
+namespace System.Data.SQLite.EF6.Migrations.Test.Models
 {
-    class Entity
+    public class Entity
     {
         public int Id { get; set; }
 
@@ -11,7 +10,7 @@ namespace System.Data.SQLite.EF6.Migrations.Test.Model01
         public string Description { get; set; }
     }
 
-    class Dependant
+    public class Dependant
     {
         public int Id { get; set; }
 
@@ -20,5 +19,5 @@ namespace System.Data.SQLite.EF6.Migrations.Test.Model01
 
         public virtual Entity MainEntity { get; set; }
     }
-
 }
+

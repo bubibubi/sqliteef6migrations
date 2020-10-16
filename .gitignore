@@ -11,3 +11,4 @@
 /System.Data.SQLite.EF6.Migrations.Test/obj
 *.user
 *.suo
+.vs
