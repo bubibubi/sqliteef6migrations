@@ -10,6 +10,12 @@ Migrations for Entity Framework 6 SQLite provider
  - Download the library (using NuGet)  
  - Create a migration configuration  
  - Setup the migration configuration (usually during first context creation)  
+ 
+ **How do I view a table in SQLite?**
+ - List the tables in your database :. tables
+ - List how the table looks :. schema tablename
+ - Print the entire table :. SELECT * FROM Ttablename
+ - List all of the **SQLite** prompt commands :. help
   
 _Example_  
   
