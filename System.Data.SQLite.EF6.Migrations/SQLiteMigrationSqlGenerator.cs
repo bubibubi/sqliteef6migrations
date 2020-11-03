@@ -196,6 +196,10 @@ namespace System.Data.SQLite.EF6.Migrations
                     if (defaultValue.Kind == DateTimeKind.Utc) format += 'Z';
                     ddlBuilder.AppendSql($" DEFAULT '{defaultValue.ToString(format)}'");
                 }
+            } else if(!String.IsNullOrEmpty(column.DefaultValueSql))
+            {
+                ddlBuilder.AppendSql($" DEFAULT ");
+                ddlBuilder.AppendSql(column.DefaultValueSql);
             }
             ddlBuilder.AppendNewLine();
 
@@ -295,6 +299,11 @@ namespace System.Data.SQLite.EF6.Migrations
                 {
                     TypeUsage storeTypeUsage = ProviderManifest.GetStoreType(column.TypeUsage);
                     ddlBuilder.AppendType(storeTypeUsage, column.IsNullable ?? true, column.IsIdentity);
+                    if(!String.IsNullOrEmpty(column.DefaultValueSql))
+                    {
+                        ddlBuilder.AppendSql(" DEFAULT ");
+                        ddlBuilder.AppendSql(column.DefaultValueSql);
+                    }
                     ddlBuilder.AppendNewLine();
                 }
 
