@@ -196,6 +196,26 @@ namespace System.Data.SQLite.EF6.Migrations
                     if (defaultValue.Kind == DateTimeKind.Utc) format += 'Z';
                     ddlBuilder.AppendSql($" DEFAULT '{defaultValue.ToString(format)}'");
                 }
+                else if (column.DefaultValue is bool boolValue)
+                {
+                    ddlBuilder.AppendSql($" DEFAULT {(boolValue ? 1 : 0)}");
+                }
+                else if (column.DefaultValue is string stringValue)
+                {
+                    ddlBuilder.AppendSql($" DEFAULT '{stringValue}'");
+                }
+                else if (column.DefaultValue is Guid guidValue)
+                {
+                    ddlBuilder.AppendSql($" DEFAULT '{guidValue}'");
+                }
+                else if (column.DefaultValue.GetType().IsEnum)
+                {
+                    ddlBuilder.AppendSql($" DEFAULT {(int)column.DefaultValue}");
+                }
+                else if (column.DefaultValue.GetType().IsValueType)
+                {
+                    ddlBuilder.AppendSql($" DEFAULT {column.DefaultValue}");
+                }
             }
             ddlBuilder.AppendNewLine();
 
